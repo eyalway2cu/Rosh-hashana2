@@ -68,7 +68,7 @@ img#logo {
 	transform: scale(0.8,0.8);
 
 	transition: all 0.5s;
-	transition-timing-function: ease-in-out;
+	transition-timing-function: linear;
 	opacity: 0.5;
 }
 
@@ -78,7 +78,7 @@ img#logo {
 }
 
 #postcard_container div.right {
-	left: calc(100% - 560px);
+	left: 640px;
 	top: 220px;
 }
 
