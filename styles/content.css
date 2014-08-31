@@ -56,16 +56,35 @@ img#logo {
 
 #postcard_container div {
 	position: absolute;
+	top: 200px;
+
+	border: 1px solid #d0d0d0;
 	background-repeat: no-repeat;
 	background-size: 560px 373px;
 	background-position: center top;
 	width: 560px;
 	height: 373px;
+
+	transition: all 0.5s;
+	transition-timing-function: ease-in-out;
+	opacity: 0.5;
+}
+
+#postcard_container div.left {
+	left: 0px;
+	top: 220px;
+}
+
+#postcard_container div.right {
+	left: calc(100% - 560px);
+	top: 220px;
 }
 
 #postcard_container div.active {
 	left: 50%;
 	margin-left: -280px;
+	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
+	opacity: 1;
 	z-index: 1000;
 }
 
@@ -175,8 +194,9 @@ div.postcard_bottom button:hover {
 img.bottom_photos {
 	position: absolute;
 	padding: 5px;
+	border: 1px solid #d0d0d0;
 	background-color: white;
-	box-shadow: 0px 0px 5px black;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 img.bottom_photos.first{
