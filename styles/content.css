@@ -65,6 +65,8 @@ img#logo {
 	width: 560px;
 	height: 373px;
 
+	transform: scale(0.8,0.8);
+
 	transition: all 0.5s;
 	transition-timing-function: ease-in-out;
 	opacity: 0.5;
@@ -86,6 +88,7 @@ img#logo {
 	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
 	opacity: 1;
 	z-index: 1000;
+	transform: scale(1,1);
 }
 
 
@@ -153,17 +156,47 @@ form label span {
 
 div.postcard_bottom {
 	position: absolute;
+	display: block;
 	top: 600px;
-	width: 400px;
+	width: 450px;
 	left: 50%;
-	margin-left: -200px;
+	margin-left: -225px;
 }
 
-div.postcard_bottom span {
-	display: block;
+div.postcard_bottom label input {
+	display: none;
+	width: 20px;
+	vertical-align: top;
+}
+
+div.postcard_bottom label span {
+	display: inline-block;
 	text-align: right;
+	width: 400px;
 	color: #663428;
 	font-size: 1.3em;
+	position: relative;
+	padding-right: 25px;
+}
+
+div.postcard_bottom label span:after {
+	position: absolute;
+	top: 4px;
+	right: 0;
+	width: 20px;
+	height: 20px;
+	content:'';
+	background-image: url(../images/checkbox-empty.svg);
+	background-position: center center;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+}
+
+div.postcard_bottom label input:checked + span:after {
+	background-image: url(../images/checkbox-full.svg);
+	background-position: center center;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
 }
 
 div.postcard_bottom button {
