@@ -51,9 +51,12 @@
 						</div>
 					</div>
 					<div class="postcard_bottom">
-						<span>
-							<cms:text constant="donate_text"/>
-						</span>
+						<label>
+							<input type="checkbox"/>
+							<span>
+								<cms:text constant="donate_text"/>
+							</span>
+						</label>
 						<button type="button">
 							<cms:text constant="send_blessing"/>
 						</button>
