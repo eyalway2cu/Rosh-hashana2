@@ -9,7 +9,65 @@
 		</head>
 
 		<body class="$language_rtl ? 'rtl' : 'ltr'" cms:eval="class">
-			<h1>It works!</h1>
+			<div id="content">
+				<div class="inner_wrap">
+					<img
+						src="_BASEURL.'/site/images/logo-blue.svg'"
+						alt="logo"
+						id="logo"
+						cms:eval="src"
+					/>
+					<div class="top_container">
+						<h1>
+							<cms:text constant="header1"/>
+						</h1>
+						<h2>
+							<cms:text constant="header2"/>
+						</h2>
+					</div>
+					<div id="postcard_container">
+						<div class="active">
+							<cms:module
+								name="contact_form"
+								action="show"
+								text_id="postcard"
+							/>
+						</div>
+						<div>
+							
+						</div>
+						<div>
+							
+						</div>
+					</div>
+					<div class="postcard_bottom">
+						<span>
+							<cms:text constant="donate_text"/>
+						</span>
+						<button type="button">
+							<cms:text constant="send_blessing"/>
+						</button>
+					</div>
+					<img
+						src="_BASEURL.'/site/images/photo-2.jpg'"
+						alt="photo1"
+						class="bottom_photos first"
+						cms:eval="src"
+					/>
+					<img
+						src="_BASEURL.'/site/images/photo-3.jpg'"
+						alt="photo1"
+						class="bottom_photos middle"
+						cms:eval="src"
+					/>
+					<img
+						src="_BASEURL.'/site/images/photo-1.jpg'"
+						alt="photo1"
+						class="bottom_photos last"
+						cms:eval="src"
+					/>
+				</div>
+			</div>
 		</body>
 	</html>
 </document>

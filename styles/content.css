@@ -1,0 +1,199 @@
+/**
+ * Content Style Sheet
+ * 
+ *
+ * Copyright (c) 2014. by Way2cu
+ * Author: Eyal Gershon
+ */
+
+div#content {
+	background-image: url(../images/background-body.jpg);
+	background-position: center -50px;
+	background-repeat: no-repeat;
+
+ }
+
+div.inner_wrap {
+ 	display: block;
+ 	max-width: 1200px;
+ 	height: 1150px;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	position: relative;
+ }
+
+div.top_container {
+	display: block;
+	width: 800px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 40px;
+ }
+
+div.top_container h1 {
+ 	color: #1d4779;
+ 	margin: 0;
+ 	font-size: 3.4em;
+ }
+
+div.top_container h2 {
+ 	color: #287fb8;
+ 	font-family: alef-bold;
+ 	margin-top: 5px;
+ }
+
+img#logo {
+	position: absolute;
+	right: 0;
+	top: 40px;
+}
+
+#postcard_container {
+	display: block;
+	text-align: center;
+}
+
+#postcard_container div {
+	position: absolute;
+	background-repeat: no-repeat;
+	background-size: 560px 373px;
+	background-position: center top;
+	width: 560px;
+	height: 373px;
+}
+
+#postcard_container div.active {
+	left: 50%;
+	margin-left: -280px;
+	z-index: 1000;
+}
+
+
+#postcard_container div:nth-of-type(1) {
+	background-image: url(../images/postcard-1.jpg)
+}
+
+#postcard_container div:nth-of-type(2) {
+	background-image: url(../images/postcard-2.jpg)
+}
+
+#postcard_container div:nth-of-type(3) {
+	background-image: url(../images/postcard-3.jpg)
+}
+
+input, textarea {
+	background-color: transparent;
+	border: 0;
+	resize: none;
+	width: 135px;
+	padding-right: 5px;
+	color: #33485d;
+}
+
+textarea {
+	width: 235px;
+	height: 211px;
+}
+
+form {
+
+}
+
+form label {
+	position: absolute;
+}
+
+form label:nth-of-type(1) {
+	right: 35px;
+	top: 260px;
+}
+
+form label:nth-of-type(2) {
+	right: 35px;
+	top: 310px;
+}
+
+form label:nth-of-type(3) {
+	left: 28px;
+	top: 73px;
+}
+
+form label:nth-of-type(3) span {
+	position: absolute;
+	top: -33px;
+	right: 2px;
+	color: #663428;
+	font-size: 1.5em;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+form label span {
+	color: #33485d;	
+}
+
+div.postcard_bottom {
+	position: absolute;
+	top: 600px;
+	width: 400px;
+	left: 50%;
+	margin-left: -200px;
+}
+
+div.postcard_bottom span {
+	display: block;
+	text-align: right;
+	color: #663428;
+	font-size: 1.3em;
+}
+
+div.postcard_bottom button {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: right;
+	margin-top: 10px;
+	width: 230px;
+	border: 0;
+	color: white;
+	background-color: #75cb1d;
+	background-image: url(../images/icon-postcard.svg);
+	background-repeat: no-repeat;
+	background-position: 8px center;
+	background-size: 70px 32px;
+	font-size: 2em;
+	border-radius: 5px;
+	padding: 5px 10px 5px 10px;
+	transition: all 0.3s;
+}
+
+div.postcard_bottom button:hover {
+	background-color: #78E706;
+}
+
+
+img.bottom_photos {
+	position: absolute;
+	padding: 5px;
+	background-color: white;
+	box-shadow: 0px 0px 5px black;
+}
+
+img.bottom_photos.first{
+	top: 700px;
+	right: 57px;
+	transform: rotateZ(-7deg) scale(0.9, 0.9);
+}
+
+img.bottom_photos.middle {
+	top: 789px;
+	right: 397px;
+	transform: rotateZ(7deg) scale(0.9, 0.9);
+}
+
+img.bottom_photos.last {
+	top: 700px;
+	left: 143px;
+	transform: rotateZ(-10deg) scale(0.9, 0.9);
+}
+

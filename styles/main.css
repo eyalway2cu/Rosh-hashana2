@@ -6,5 +6,21 @@
  * Authors:
  */
 
+
+@font-face {
+  font-family: 'Alef';
+  src: url('../font/Alef-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Alef-bold';
+  src: url('../font/Alef-Bold.ttf') format('truetype');
+}
+
 body {
+	font-family: 'Alef', serif;
+}
+
+b {
+	font-family: 'Alef-bold', serif;
 }
