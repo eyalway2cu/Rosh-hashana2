@@ -4,7 +4,9 @@
 	<language name="עברית" short="he" rtl="yes" default="yes">
 		<constant name="site_title">Site title</constant>
 		<constant name="header1">גם הם זקוקים לברכה שלך</constant>
+		<constant name="header1-thankyou">אנו מודים לכם על תרומתכם</constant>
 		<constant name="header2">שלח עכשיו ברכה חגיגית לילד חולה לכבוד ראש השנה, ואנו נדפיס אותה על גלויה חגיגית ונעניק אותה לילדים.</constant>
+		<constant name="header2-thankyou">תת כותרת לדף תודה</constant>
 		<constant name="donate_text">ברצוני גם לתרום ארוחת חג משפחתית למשפחות הילדים השוהות בבתי החולים במהלך החג.</constant>
 		<constant name="send_blessing">שלח ברכה</constant>
 	</language>
