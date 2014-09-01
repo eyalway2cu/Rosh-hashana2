@@ -65,6 +65,7 @@ img#logo {
 	width: 560px;
 	height: 373px;
 
+	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
 	transform: scale(0.8,0.8);
 
 	transition: all 0.5s;
@@ -78,7 +79,7 @@ img#logo {
 }
 
 #postcard_container div.right {
-	left: calc(100% - 560px);
+	left: 640px;
 	top: 220px;
 }
 
@@ -201,22 +202,27 @@ div.postcard_bottom label input:checked + span:after {
 
 div.postcard_bottom button {
 	display: block;
+	min-width: 230px;
+
 	margin-left: auto;
 	margin-right: auto;
-	text-align: right;
+
 	margin-top: 10px;
-	width: 230px;
+	padding: 5px 10px;
+	padding-left: 90px;
+
 	border: 0;
-	color: white;
+	border-radius: 5px;
 	background-color: #75cb1d;
 	background-image: url(../images/icon-postcard.svg);
 	background-repeat: no-repeat;
-	background-position: 8px center;
+	background-position: 10px center;
 	background-size: 70px 32px;
-	font-size: 2em;
-	border-radius: 5px;
-	padding: 5px 10px 5px 10px;
 	transition: all 0.3s;
+
+	color: white;
+	font-size: 2em;
+	text-align: right;
 }
 
 div.postcard_bottom button:hover {
@@ -250,3 +256,61 @@ img.bottom_photos.last {
 	transform: rotateZ(-10deg) scale(0.9, 0.9);
 }
 
+/**
+ * Tranzila
+ */
+iframe#tranzila {
+	display: block;
+	width: 500px;
+	height: 500px;
+
+	visibility: hidden;
+	opacity: 0;
+
+	position: fixed;
+	left: 50%;
+	top: 50%;
+
+	margin-left: -250px;
+	margin-top: -250px;
+
+	border-radius: 3px;
+	background-color: white;
+	box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.5);
+	will-change: opacity;
+	z-index: 10000;
+
+	transition: all 0.5s;
+	transition-delay: 0s;
+}
+
+iframe#tranzila.visible {
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 0.5s;
+}
+
+div.iframe-background {
+	display: block;
+	width: 100%;
+	height: 100%;
+
+	visibility: hidden;
+	opacity: 0;
+
+	position: fixed;
+	left: 0px;
+	top: 0px;
+
+	background-color: #606060;
+	background-color: rgba(0, 0, 0, 0.5);
+
+	will-change: opacity;
+	transition: all 0.5s;
+	z-index: 9999;
+}
+
+div.iframe-background.visible {
+	visibility: visible;
+	opacity: 1;
+}
