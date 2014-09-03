@@ -39,29 +39,44 @@
 					</div>
 					<div id="postcard_container">
 						<div class="left" data-name="pomegranate">
-							<cms:module
-								name="contact_form"
-								action="show"
-								text_id="postcard"
-							/>
+							<cms:desktop>
+								<cms:module
+									name="contact_form"
+									action="show"
+									text_id="postcard"
+								/>
+							</cms:desktop>
 						</div>
 
 						<div class="active" data-name="holiday">
-							<cms:module
-								name="contact_form"
-								action="show"
-								text_id="postcard"
-							/>
+							<cms:desktop>
+								<cms:module
+									name="contact_form"
+									action="show"
+									text_id="postcard"
+								/>
+							</cms:desktop>
 						</div>
 
 						<div class="right" data-name="honey and apples">
+							<cms:desktop>
+								<cms:module
+									name="contact_form"
+									action="show"
+									text_id="postcard"
+								/>
+							</cms:desktop>
+						</div>
+					</div>
+					<cms:mobile>
+						<div class="mobile_form">
 							<cms:module
 								name="contact_form"
 								action="show"
 								text_id="postcard"
 							/>
 						</div>
-					</div>
+					</cms:mobile>
 					<div class="postcard_bottom">
 						<label>
 							<input type="checkbox" checked="checked"/>

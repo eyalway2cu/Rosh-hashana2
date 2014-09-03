@@ -108,18 +108,24 @@ div.top_container h2 {
 	background-image: url(../images/postcard-3.jpg);
 }
 
+div.mobile_form {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
 input, textarea {
-	background-color: transparent;
-	border: 0;
-	resize: none;
-	width: 135px;
-	padding-right: 5px;
-	color: #33485d;
+	display: block;
+	width: 250px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #3b5997;
+	color: #3b5997;
+	border-radius: 5px;
+	font-size: 1.5em;
 }
 
 textarea {
-	width: 122px;
-	height: 111px;
+
 }
 
 form {
@@ -127,35 +133,30 @@ form {
 }
 
 form label {
-	position: absolute;
+
 }
 
 form label:nth-of-type(1) {
-	right: 14px;
-	top: 133px;
+
 }
 
 form label:nth-of-type(2) {
-	right: 15px;
-	top: 160px;
+
 }
 
 form label:nth-of-type(3) {
-	left: 15px;
-	top: 39px;
+
 }
 
 form label:nth-of-type(3) span {
-	position: absolute;
-	top: -33px;
-	right: 2px;
-	color: #663428;
-	font-size: 1.5em;
-	background-color: rgba(255, 255, 255, 0.7);
+
 }
 
 form label span {
-	color: #33485d;	
+	display: block;
+	color: #3b5997;
+	text-align: center;
+	font-size: 1.5em;
 }
 
 div.postcard_bottom {
