@@ -34,9 +34,9 @@ class PostcardMailer extends ContactForm_Mailer {
 	 */
 	public function generate_image() {
 		$versions = array(
+			'pomegranate'		=> _BASEPATH.'/site/images/postcard-1.jpg',
 			'holiday'			=> _BASEPATH.'/site/images/postcard-2.jpg',
 			'honey and apples'	=> _BASEPATH.'/site/images/postcard-3.jpg',
-			'pomegranate'		=> _BASEPATH.'/site/images/postcard-1.jpg',
 		);
 		$variation = $this->variables['version'];
 		$image = imagecreatefromjpeg($versions[$variation]);
@@ -73,19 +73,25 @@ class PostcardMailer extends ContactForm_Mailer {
 		$line = '';
 
 		// draw text
+		$painted = false;
 		while (count($text) > 0) {
 			$word = (empty($line) ? '' : ' ').array_shift($text);
 			$box = imagettfbbox($size_text, 0, $font_regular, $line.$word);
 
 			if ($box[4] > $text_box_width) {
 				$box = imagettfbbox($size_text, 0, $font_regular, $line);
-				imagettftext($text_image, $size_text, 0, $text_box_width - $box[4], $pos_y, $color_text, $font_regular, utf8_strrev($line));
+				imagettftext($text_image, $size_text, 0, $text_box_width - $box[4] - 5, $pos_y, $color_text, $font_regular, utf8_strrev($line));
 				$pos_y += $line_height + 8;
 				$line = trim($word);
+				$painted = true;
 			} else {
 				$line .= $word;
+				$painted = false;
 			}
 		}
+
+		if (!$painted)
+			imagettftext($text_image, $size_text, 0, $text_box_width - $box[4] - 5, $pos_y, $color_text, $font_regular, utf8_strrev($line));
 
 		imagecopy($image, $text_image, $text_pos_x, $text_pos_y, 0, 0, $text_box_width, $text_box_height);
 		imagedestroy($text_image);
@@ -114,7 +120,7 @@ class PostcardMailer extends ContactForm_Mailer {
 	 * @return boolean
 	 */
 	public function send() {
-		$image = $this->generateImage();
+		$image = $this->generate_image();
 		$this->mailer->attach_file($image, $this->variables['name'].'.png');
 		unlink($image);
 
