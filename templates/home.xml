@@ -38,7 +38,7 @@
 						</h2>
 					</div>
 					<div id="postcard_container">
-						<div class="left" data-name="holiday">
+						<div class="left" data-name="pomegranate">
 							<cms:module
 								name="contact_form"
 								action="show"
@@ -46,7 +46,7 @@
 							/>
 						</div>
 
-						<div class="active" data-name="honey and apples">
+						<div class="active" data-name="holiday">
 							<cms:module
 								name="contact_form"
 								action="show"
@@ -54,7 +54,7 @@
 							/>
 						</div>
 
-						<div class="right" data-name="pomegranate">
+						<div class="right" data-name="honey and apples">
 							<cms:module
 								name="contact_form"
 								action="show"
