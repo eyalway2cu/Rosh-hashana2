@@ -138,6 +138,10 @@ function PostCards() {
 
 		var container = self.form_containers.filter('.active');
 		var current_form = container.find('form');
+
+		if (current_form.length == 0)
+			current_form = $('form');
+
 		var field = current_form.find('input[name=version]');
 		var donate = current_form.find('input[name=donate]');
 
