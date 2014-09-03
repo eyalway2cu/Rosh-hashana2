@@ -65,6 +65,8 @@ function PostCards() {
 		var params = {
 			lang: 'he',
 			sum: 100,
+			contact: '',
+			phone: '',
 			cred_type: 8,
 			currency: 1
 		};
