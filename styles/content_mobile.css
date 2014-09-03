@@ -1,33 +1,29 @@
 /**
  * Content Style Sheet
- * 
  *
  * Copyright (c) 2014. by Way2cu
- * Author: Eyal Gershon
+ * Author: Eyal Gershon, Mladen Mijatov
  */
 
- header {
- 	background-image: url(../images/header-background.jpg);
- 	background-position: center top;
- 	background-repeat: no-repeat;
- 	background-size: 100%;
- 	padding-top: 50px;
+header {
+	background-image: url(../images/header-background.jpg);
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	padding-top: 50px;
 }
 
- header img {
- 	display: block;
- 	margin-left: auto;
- 	margin-right: auto;
- }
-
-div#content {
+header img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 div.inner_wrap {
- 	display: block;
- 	margin-left: auto;
- 	margin-right: auto;
- 	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
 }
 
 div.top_container {
@@ -44,24 +40,24 @@ div#content.thank-you div.top_container {
 }
 
 div.top_container h1 {
- 	color: #1d4779;
- 	margin: 0;
- 	font-size: 3em;
- }
+	color: #1d4779;
+	margin: 0;
+	font-size: 3em;
+}
 
 div.top_container h2 {
- 	color: #287fb8;
- 	font-family: alef-bold;
- 	margin-top: 5px;
- }
+	color: #287fb8;
+	font-family: alef-bold;
+	margin-top: 5px;
+}
 
- #postcard_container {
+#postcard_container {
 	display: block;
 	text-align: center;
 }
 
 #postcard_container > div {
-	display: block;
+	display: none;
 
 	border: 1px solid #d0d0d0;
 	background-repeat: no-repeat;
@@ -70,29 +66,12 @@ div.top_container h2 {
 	width: 300px;
 	height: 200px;
 
-	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
-	transform: scale(0.8,0.8);
-
-	transition: all 0.5s;
-	transition-timing-function: ease-in-out;
-	opacity: 0.5;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-#postcard_container > div.left {
-
-}
-
-#postcard_container > div.right {
-
-}
-
 #postcard_container > div.active {
-	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
-	opacity: 1;
-	z-index: 1000;
-	transform: scale(1,1);
+	display: block;
 }
 
 
@@ -106,6 +85,29 @@ div.top_container h2 {
 
 #postcard_container > div:nth-of-type(3) {
 	background-image: url(../images/postcard-3.jpg);
+}
+
+nav#postcards {
+	display: block;
+	padding: 20px;
+	text-align: center;
+}
+
+nav#postcards a {
+	display: inline-block;
+	width: 26px;
+	height: 26px;
+	
+	margin-left: 10px;
+	margin-right: 10px;
+
+	border: 1px solid white;
+	border-radius: 14px;
+	box-shadow: 0px 0px 0px 1px #909090;
+}
+
+nav#postcards a.active {
+	background-color: #d0d0d0;
 }
 
 div.mobile_form {
@@ -258,10 +260,10 @@ img.bottom_photos.last {
 }
 
 footer {
-	 background-image: url(../images/footer-background.jpg);
- 	background-position: center top;
- 	background-repeat: no-repeat;
- 	background-size: 100%;
- 	padding-top: 50px;
- 	padding-bottom: 50px;
+	background-image: url(../images/footer-background.jpg);
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }

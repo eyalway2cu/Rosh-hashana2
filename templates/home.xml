@@ -30,12 +30,8 @@
 						/>
 					</cms:desktop>
 					<div class="top_container">
-						<h1>
-							<cms:text constant="header1"/>
-						</h1>
-						<h2>
-							<cms:text constant="header2"/>
-						</h2>
+						<h1><cms:text constant="header1"/></h1>
+						<h2><cms:text constant="header2"/></h2>
 					</div>
 					<div id="postcard_container">
 						<div class="left" data-name="pomegranate">
@@ -67,6 +63,14 @@
 								/>
 							</cms:desktop>
 						</div>
+
+						<cms:mobile>
+							<nav id="postcards">
+								<a href="javascript: void(0)"/>
+								<a class="active" href="javascript: void(0)"/>
+								<a href="javascript: void(0)"/>
+							</nav>
+						</cms:mobile>
 					</div>
 					<cms:mobile>
 						<div class="mobile_form">
