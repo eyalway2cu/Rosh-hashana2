@@ -33,7 +33,7 @@ function PostCards() {
 		// connect events
 		self.form_containers.click(self._handleFormClick);
 		self.button.click(self._handleSubmit);
-		self.forms.on('dialog-show', self._handleDialogShow);
+		// self.forms.on('dialog-show', self._handleDialogShow);
 	}
 
 	/**
@@ -139,6 +139,10 @@ function PostCards() {
 		var container = self.form_containers.filter('.active');
 		var current_form = container.find('form');
 		var field = current_form.find('input[name=version]');
+		var donate = current_form.find('input[name=donate]');
+
+		if (self.checkbox.is(':checked')) 
+			donate.val(1);
 
 		field.val(container.data('name'));
 		current_form.submit();
