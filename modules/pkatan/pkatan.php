@@ -45,10 +45,14 @@ class pkatan extends Module {
 				case 'test':
 					$this->mailer->set_variables(array(
 						'version'	=> 'holiday',
-						'name'		=> 'Mladen Mijatov',
+						'name'		=> 'זרובבל אלמליאך',
 						'blessing'	=> 'לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. קלאצי קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. קלאצי סחטיר בלובק. תצטנפל בלינדו למרקל אס לכימפו, דול, צוט ומעיוט - לפתיעם ברשג - ולתיעם גדדיש. קוויז דומור ליאמום בלינך רוגצה.'
 					));
-					$this->mailer->send();
+					$image = $this->mailer->generate_image();
+
+					header('Content-type: image/png');
+					print file_get_contents($image);
+
 					break;
 			}
 	}
