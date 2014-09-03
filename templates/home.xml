@@ -63,6 +63,14 @@
 								/>
 							</cms:desktop>
 						</div>
+
+						<cms:mobile>
+							<nav id="postcards">
+								<a href="javascript: void(0)"/>
+								<a class="active" href="javascript: void(0)"/>
+								<a href="javascript: void(0)"/>
+							</nav>
+						</cms:mobile>
 					</div>
 					<cms:mobile>
 						<div class="mobile_form">

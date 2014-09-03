@@ -34,6 +34,7 @@ function PostCards() {
 		self.form_containers.click(self._handleFormClick);
 		self.button.click(self._handleSubmit);
 		// self.forms.on('dialog-show', self._handleDialogShow);
+		$('nav#postcards a').click(self._handleControlClick);
 	}
 
 	/**
@@ -150,6 +151,25 @@ function PostCards() {
 
 		field.val(container.data('name'));
 		current_form.submit();
+	};
+
+	/**
+	 * Handle clicking on circle.
+	 *
+	 * @param object event
+	 */
+	self._handleControlClick = function(event) {
+		event.preventDefault();
+
+		var control = $(this);
+		var index = control.index();
+		var form_container = self.form_containers.eq(index);
+
+		$('nav#postcards a').not(control).removeClass('active');
+		control.addClass('active');
+
+		self.form_containers.not(form_container).removeClass('active');
+		form_container.addClass('active');
 	};
 
 	// finalize object
