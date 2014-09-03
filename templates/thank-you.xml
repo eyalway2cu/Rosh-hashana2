@@ -9,7 +9,20 @@
 		</head>
 
 		<body class="$language_rtl ? 'rtl' : 'ltr'" cms:eval="class">
-			<div id="content">
+			<!-- Amend previous submission -->
+			<cms:module
+				name="contact_form"
+				action="amend_submission"
+				text_id="postcard"
+				show_result="0"
+				>
+				<param type="request" name="contact" field="name"/>
+				<param type="request" name="phone" field="phone"/>
+				<set field="donated" value="1"/>
+			</cms:module>
+
+			<!-- Page content -->
+			<div id="content" class="thank-you">
 				<div class="inner_wrap">
 					<img
 						src="_BASEURL.'/site/images/logo-blue.svg'"
