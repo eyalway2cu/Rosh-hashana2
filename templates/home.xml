@@ -9,14 +9,26 @@
 		</head>
 
 		<body class="$language_rtl ? 'rtl' : 'ltr'" cms:eval="class">
+			<cms:mobile>
+				<header>
+					<img
+							src="_BASEURL.'/site/images/logo-blue.svg'"
+							alt="logo"
+							id="logo"
+							cms:eval="src"
+						/>
+				</header>
+			</cms:mobile>
 			<div id="content">
 				<div class="inner_wrap">
-					<img
-						src="_BASEURL.'/site/images/logo-blue.svg'"
-						alt="logo"
-						id="logo"
-						cms:eval="src"
-					/>
+					<cms:desktop>
+						<img
+							src="_BASEURL.'/site/images/logo-blue.svg'"
+							alt="logo"
+							id="logo"
+							cms:eval="src"
+						/>
+					</cms:desktop>
 					<div class="top_container">
 						<h1>
 							<cms:text constant="header1"/>
@@ -81,6 +93,9 @@
 					/>
 				</div>
 			</div>
+			<cms:mobile>
+				<footer></footer>
+			</cms:mobile>
 		</body>
 	</html>
 </document>
