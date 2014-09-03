@@ -65,7 +65,7 @@ div#content.thank-you img#logo {
 	text-align: center;
 }
 
-#postcard_container div {
+#postcard_container > div {
 	position: absolute;
 	top: 200px;
 
@@ -84,17 +84,17 @@ div#content.thank-you img#logo {
 	opacity: 0.5;
 }
 
-#postcard_container div.left {
+#postcard_container > div.left {
 	left: 0px;
 	top: 220px;
 }
 
-#postcard_container div.right {
+#postcard_container > div.right {
 	left: 640px;
 	top: 220px;
 }
 
-#postcard_container div.active {
+#postcard_container > div.active {
 	left: 50%;
 	margin-left: -280px;
 	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
@@ -104,15 +104,15 @@ div#content.thank-you img#logo {
 }
 
 
-#postcard_container div:nth-of-type(1) {
+#postcard_container > div:nth-of-type(1) {
 	background-image: url(../images/postcard-1.jpg)
 }
 
-#postcard_container div:nth-of-type(2) {
+#postcard_container > div:nth-of-type(2) {
 	background-image: url(../images/postcard-2.jpg)
 }
 
-#postcard_container div:nth-of-type(3) {
+#postcard_container > div:nth-of-type(3) {
 	background-image: url(../images/postcard-3.jpg)
 }
 
