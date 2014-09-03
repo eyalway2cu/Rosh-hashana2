@@ -1,0 +1,256 @@
+/**
+ * Content Style Sheet
+ * 
+ *
+ * Copyright (c) 2014. by Way2cu
+ * Author: Eyal Gershon
+ */
+
+ header {
+ 	background-image: url(../images/footer-background.jpg);
+ 	background-position: center top;
+ 	background-repeat: no-repeat;
+ 	background-size: 100%;
+ 	padding-top: 50px;
+ 	padding-bottom: 50px;
+}
+
+ header img {
+ 	display: block;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ }
+
+div#content {
+}
+
+div.inner_wrap {
+ 	display: block;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	position: relative;
+}
+
+div.top_container {
+	display: block;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+div#content.thank-you div.top_container {
+	padding-top: 230px;
+}
+
+div.top_container h1 {
+ 	color: #1d4779;
+ 	margin: 0;
+ 	font-size: 3em;
+ }
+
+div.top_container h2 {
+ 	color: #287fb8;
+ 	font-family: alef-bold;
+ 	margin-top: 5px;
+ }
+
+ #postcard_container {
+	display: block;
+	text-align: center;
+}
+
+#postcard_container > div {
+	display: block;
+
+	border: 1px solid #d0d0d0;
+	background-repeat: no-repeat;
+	background-size: 300px 200px;
+	background-position: center top;
+	width: 300px;
+	height: 200px;
+
+	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+	transform: scale(0.8,0.8);
+
+	transition: all 0.5s;
+	transition-timing-function: ease-in-out;
+	opacity: 0.5;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#postcard_container > div.left {
+
+}
+
+#postcard_container > div.right {
+
+}
+
+#postcard_container > div.active {
+	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
+	opacity: 1;
+	z-index: 1000;
+	transform: scale(1,1);
+}
+
+
+#postcard_container > div:nth-of-type(1) {
+	background-image: url(../images/postcard-1.jpg);
+}
+
+#postcard_container > div:nth-of-type(2) {
+	background-image: url(../images/postcard-2.jpg);
+}
+
+#postcard_container > div:nth-of-type(3) {
+	background-image: url(../images/postcard-3.jpg);
+}
+
+input, textarea {
+	background-color: transparent;
+	border: 0;
+	resize: none;
+	width: 135px;
+	padding-right: 5px;
+	color: #33485d;
+}
+
+textarea {
+	width: 122px;
+	height: 111px;
+}
+
+form {
+
+}
+
+form label {
+	position: absolute;
+}
+
+form label:nth-of-type(1) {
+	right: 14px;
+	top: 133px;
+}
+
+form label:nth-of-type(2) {
+	right: 15px;
+	top: 160px;
+}
+
+form label:nth-of-type(3) {
+	left: 15px;
+	top: 39px;
+}
+
+form label:nth-of-type(3) span {
+	position: absolute;
+	top: -33px;
+	right: 2px;
+	color: #663428;
+	font-size: 1.5em;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+form label span {
+	color: #33485d;	
+}
+
+div.postcard_bottom {
+	display: block;
+	margin-bottom: 30px;
+	background-color: #7e8b8c;
+	padding: 10px;
+}
+
+div.postcard_bottom label input {
+	display: none;
+	width: 20px;
+	vertical-align: top;
+}
+
+div.postcard_bottom label span {
+	display: inline-block;
+	text-align: center;
+	color: white;
+	font-size: 1.3em;
+	position: relative;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 22px;
+}
+
+div.postcard_bottom label span:after {
+	position: absolute;
+	top: 4px;
+	left: 50%;
+	margin-left: -10px;
+	width: 20px;
+	height: 20px;
+	content:'';
+	background-image: url(../images/checkbox-empty.svg);
+	background-position: center center;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+}
+
+div.postcard_bottom label input:checked + span:after {
+	background-image: url(../images/checkbox-full.svg);
+	background-position: center center;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+}
+
+div.postcard_bottom button {
+	display: block;
+	min-width: 230px;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	margin-top: 10px;
+	padding: 5px 10px;
+	padding-left: 90px;
+
+	border: 0;
+	border-radius: 5px;
+	background-color: #75cb1d;
+	background-image: url(../images/icon-postcard.svg);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	background-size: 70px 32px;
+	transition: all 0.3s;
+
+	color: white;
+	font-size: 2em;
+	text-align: right;
+}
+
+div.postcard_bottom button:hover {
+	background-color: #78E706;
+}
+
+
+img.bottom_photos {
+	display: block;
+	padding: 5px;
+	border: 1px solid #d0d0d0;
+	background-color: white;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+	max-width: 100%;
+}
+
+img.bottom_photos.first{
+	transform: rotateZ(-7deg) scale(0.9, 0.9);
+}
+
+img.bottom_photos.middle {
+	transform: rotateZ(7deg) scale(0.9, 0.9);
+}
+
+img.bottom_photos.last {
+	transform: rotateZ(-10deg) scale(0.9, 0.9);
+}
