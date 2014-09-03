@@ -31,6 +31,10 @@ div.top_container {
 	padding-top: 40px;
  }
 
+div#content.thank-you div.top_container {
+	padding-top: 230px;
+}
+
 div.top_container h1 {
  	color: #1d4779;
  	margin: 0;
@@ -47,6 +51,13 @@ img#logo {
 	position: absolute;
 	right: 0;
 	top: 40px;
+}
+
+div#content.thank-you img#logo {
+	right: auto;
+	left: 50%;
+
+	margin-left: -86px;
 }
 
 #postcard_container {
