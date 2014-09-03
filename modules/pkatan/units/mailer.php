@@ -28,14 +28,11 @@ class PostcardMailer extends ContactForm_Mailer {
 	}
 
 	/**
-	 * Finalize message and send it to specified addresses.
-	 * 
-	 * Note: Before sending, you *must* check if contact_form
-	 * function detectBots returns false.
+	 * Generate image for specified variables.
 	 *
-	 * @return boolean
+	 * @return string
 	 */
-	public function send() {
+	public function generate_image() {
 		$versions = array(
 			'holiday'			=> _BASEPATH.'/site/images/postcard-2.jpg',
 			'honey and apples'	=> _BASEPATH.'/site/images/postcard-3.jpg',
@@ -95,17 +92,33 @@ class PostcardMailer extends ContactForm_Mailer {
 
 		// draw name
 		$box = imagettfbbox($size_name, 0, $font_bold, $name[0]);
-		imagettftext($image, $size_name, 0, 530 - $box[4], 285, $color_name, $font_bold, $name[0]);
+		imagettftext($image, $size_name, 0, 530 - $box[4], 285, $color_name, $font_bold, utf8_strrev($name[0]));
 
 		$box = imagettfbbox($size_name, 0, $font_bold, $name[1]);
-		imagettftext($image, $size_name, 0, 530 - $box[4], 335, $color_name, $font_bold, $name[1]);
+		imagettftext($image, $size_name, 0, 530 - $box[4], 335, $color_name, $font_bold, utf8_strrev($name[1]));
 
 		// print out the image
-		header('Content-type: image/png');
-		imagepng($image);
+		$file_name = tempnam(sys_get_temp_dir(), 'postcard-');
+		imagepng($image, $file_name);
 		imagedestroy($image);
 
-		//return $this->mailer->send();
+		return $file_name;
+	}
+
+	/**
+	 * Finalize message and send it to specified addresses.
+	 * 
+	 * Note: Before sending, you *must* check if contact_form
+	 * function detectBots returns false.
+	 *
+	 * @return boolean
+	 */
+	public function send() {
+		$image = $this->generateImage();
+		$this->mailer->attach_file($image, $this->variables['name'].'.png');
+		unlink($image);
+
+		return $this->mailer->send();
 	}
 
 	/**
@@ -164,7 +177,7 @@ class PostcardMailer extends ContactForm_Mailer {
 	 */
 	public function set_variables($variables) {
 		$this->variables = $variables;
-		/* $this->mailer->set_variables($variables); */
+		$this->mailer->set_variables($variables);
 	}
 
 	/**
@@ -185,10 +198,11 @@ class PostcardMailer extends ContactForm_Mailer {
 	 * <img src="cid:example_file.png">
 	 *
 	 * @param string $file_name
+	 * @param string $attached_name
 	 * @param boolean $inline
 	 */
-	public function attach_file($file_name, $inline=false) {
-		$this->mailer->attach_file($file_name, $inline);
+	public function attach_file($file_name, $attached_name=null, $inline=false) {
+		$this->mailer->attach_file($file_name, $attached_name, $inline);
 	}
 }
 
