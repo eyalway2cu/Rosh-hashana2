@@ -43,10 +43,26 @@ class PostcardMailer extends ContactForm_Mailer {
 		$font_regular = _BASEPATH.'/site/font/open_sans_regular.ttf';
 		$font_bold = _BASEPATH.'/site/font/open_sans_bold.ttf';
 
+		// prepare name
 		if (mb_strpos($this->variables['name'], ' ') == false)
 			$name = array(' ', $this->variables['name']); else
 			$name = explode(' ', $this->variables['name']);
-		$text = explode(' ', $this->variables['blessing']);
+
+		// prepare text
+		$text = unfix_chars($this->variables['blessing']);
+		$text = explode(' ', $text);
+
+		// find line breaks
+		for ($i = 0; $i < count($text); $i++) {
+			$line = $text[$i];
+			$line = preg_replace('/[\n\t]+/', ' ', $line);
+
+			if (strpos($line, ' ')) {
+				$line_data = explode(' ', $line);
+				array_splice($text, $i, 1, $line_data);
+			}
+		}
+
 		$text_pos_x = 38;
 		$text_pos_y = 83;
 		$text_box_width = 219;
@@ -84,6 +100,7 @@ class PostcardMailer extends ContactForm_Mailer {
 				$pos_y += $line_height + 8;
 				$line = trim($word);
 				$painted = true;
+
 			} else {
 				$line .= $word;
 				$painted = false;
